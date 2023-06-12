@@ -1,0 +1,44 @@
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+.center {
+  padding-right: 40px;
+  padding-left: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+// bar color
+.normal {
+  color: #bbff00;
+  background-color: #303030;
+  border-radius: 10px;
+}
+.trace {
+  color: #f6ff00;
+  background-color: #303030;
+  border-radius: 10px;
+}
+.warning {
+  color: #ff8800;
+  background-color: #303030;
+  border-radius: 20px;
+}
+.error {
+  color: #D35D6E;
+  background-color: #303030;
+  border-radius: 10px;
+}
+
+.circ {
+  margin: 3px;
+}
+
+.rcorners {
+  background-color: #595959;
+  border-color: #33ccff #00ff99 #00ff99 #33ccff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 25px;
+}

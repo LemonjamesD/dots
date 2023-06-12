@@ -1,0 +1,72 @@
+(defwidget bar []
+  (centerbox :orientation "h"
+    (left)
+	(center)
+	(right)))
+
+(defwidget left [] 
+  (box :class "rcorners" ""))
+    
+(defwidget center [] 
+  (box :class "rcorners center"
+       :halign "center"
+       :width 50
+    (metric :label "${round(EWW_TEMPS.K10TEMP_TCCD1, 1)}°C"
+            :icon "images/temp.png"
+            :value {EWW_TEMPS.K10TEMP_TCCD1}
+            :min 30
+            :max 100)
+    (metric :label "${round(EWW_CPU.avg, 1)}%"
+            :icon "images/cpu.png"
+            :value {EWW_CPU.avg}
+            :min 0
+            :max 100)
+    (metric :label "${round(EWW_RAM.used_mem_perc, 1)}%"
+            :icon "images/ram.png"
+            :value {EWW_RAM.used_mem_perc}
+            :min 0
+            :max 100)
+    (metric :label "${gpuusage}.0%"
+            :icon "images/gpu.png"
+            :value {gpuusage}
+            :min 0
+            :max 100
+            :image-height 35
+            :image-width  35)))
+
+(defwidget right [] 
+  (box :class "rcorners" datetime))
+
+(defpoll datetime :interval "1s"
+  `date "+%B %e %a %H:%M:%S %Y"`)
+
+(defpoll gpuusage :interval "1s"
+  `gpustat --no-color | cut -d '|' -f2 | cut -b "9,10,11" | sed -e "1d" | sed -e "s/ //"`)
+
+;; helper widgets
+(defwidget metric [?label ?icon ?tooltip value ?onchange ?class min max ?image-width ?image-height]
+  (eventbox :halign "fill"
+            :tooltip tooltip
+  (box :orientation "h"
+       :class "metric"
+       :space-evenly true
+    (image :path {icon != "" ? icon : ""}
+           :image-width  {image-width == "" ? 35 : image-width}
+           :image-height {image-height == "" ? 35 : image-height})
+    (label :text {label})
+    (circular-progress :class "${class != "" ? class : ((value - min) / (max - min) * 100) > 25 ? ((value - min) / (max - min) * 100) > 50 ? ((value - min) / (max - min) * 100) > 75 ? "error" : "warning" : "trace" : "normal"} circ"
+                       :value {(value - min) / (max - min) * 100}
+                       :thickness 4
+                       :width 25))))
+
+(defwindow bar
+  :exclusive true
+  :monitor 1
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "1%"
+					  :width "97%"
+					  :height "4%"
+					  :anchor "top center")
+  :reserve (struts :side "top" :distance "2%")
+  (bar))

@@ -18,7 +18,7 @@
   * ![Images](https://github.com/LemonjamesD/dots/tree/eww/images)
   * ![Scripts](https://github.com/LemonjamesD/dots/tree/eww/scripts)
 
-# General Information for user `lemon`
+# General Information for system `prometheus`
 | Name | Info |
 | --- | --- |
 | OS | NixOs |

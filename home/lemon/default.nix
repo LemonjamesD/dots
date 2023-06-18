@@ -50,15 +50,6 @@ in {
     # Matrix Client
     element-desktop
 
-    # Gaming
-    steam
-    protontricks
-    sc-controller
-    protonup-ng
-    obs-studio
-    prismlauncher
-    lutris
-
     # Pipewire
     pavucontrol
     # helvum
@@ -98,11 +89,6 @@ in {
     # system tools
     hwinfo
     pciutils
-
-    # wine
-    wineWowPackages.stable
-    bottles
-    winetricks
 
     # Rust
     rustup
@@ -148,9 +134,6 @@ in {
     # Borwsers
     firefox
     ungoogled-chromium
-
-    # Java
-    jdk17_headless
 
     # Fonts
     nerdfonts

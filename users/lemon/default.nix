@@ -1,12 +1,10 @@
-{ config, pkgs, use-wayland, ... }: let
-  backend = 
-    if use-wayland == true then 
-      ./wayland.nix
-    else
-      ./x11.nix;
+{ config, pkgs, ... }: let
+
 in {
   imports = [
-    backend
+    ./x11.nix
+    ./wayland.nix
+    ./login-manager.nix
     ./polkit.nix
     ./settings.nix
   ];

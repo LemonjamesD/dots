@@ -55,6 +55,9 @@ in {
     # helvum
     noisetorch
 
+    # git
+    gitkraken
+
     # Internet
     nmap
 
@@ -98,6 +101,7 @@ in {
     # Screenshots
     grim
     slurp
+    inputs.hypr-contrib.packages.${pkgs.system}.grimblast
 
     # Imaging tools
     feh
@@ -166,8 +170,6 @@ in {
     bluez
     bluez-tools
     blueman
-  ] ++ [
-    inputs.hypr-contrib.packages.${pkgs.system}.grimblast
   ];
 
   services.flatpak = {

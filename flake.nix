@@ -34,12 +34,10 @@
     # Get the host and user
     host = secrets.host;
     user = secrets.user;
-
-    use-wayland = false;
     
     mkNixOS = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit nixpkgs system stateVersion host user secrets use-wayland inputs; };
+      specialArgs = { inherit nixpkgs system stateVersion host user secrets inputs; };
       modules = [ 
         # System
         (./configuration.nix)
@@ -50,7 +48,7 @@
     };
   in {
     homeConfigurations = import ./home/home-configuration.nix { 
-      inherit home-manager nixpkgs system stateVersion host user secrets use-wayland inputs; 
+      inherit home-manager nixpkgs system stateVersion host user secrets inputs; 
     };
 
     nixosConfigurations = {

@@ -13,6 +13,7 @@ in {
     firefox
     git
     home-manager
+    comma
   ];
   
   # Remove old builds

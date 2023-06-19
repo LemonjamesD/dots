@@ -9,6 +9,7 @@ in {
     ./helix.nix
     ./spotify.nix
     ../shared/gaming.nix
+    ../shared/fonts.nix
   ];
 
   home.sessionVariables = {
@@ -58,7 +59,7 @@ in {
     # git
     gitkraken
 
-    # Internet
+   # Internet
     nmap
 
     # Terminal
@@ -138,9 +139,6 @@ in {
     # Borwsers
     firefox
     ungoogled-chromium
-
-    # Fonts
-    nerdfonts
 
     # Unreal engine {broken}
     # ue4

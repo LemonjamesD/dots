@@ -14,7 +14,7 @@
       inputs.dream2nix.follows = "dream2nix";
     };
     helix-master = {
-      url = "github:SoraTenshi/helix/new-daily-driver";
+      url = "github:LemonjamesD/helix/new-daily-driver";
       inputs.nci.follows = "nci";
       inputs.nixpkgs.follows = "nixpkgs";
     };

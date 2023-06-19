@@ -7,6 +7,7 @@ in {
     ./login-manager.nix
     ./polkit.nix
     ./settings.nix
+    ../shared/fonts.nix
   ];
 
   programs.kdeconnect.enable = true;

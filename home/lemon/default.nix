@@ -9,7 +9,6 @@ in {
     ./helix.nix
     ./spotify.nix
     ../shared/gaming.nix
-    ../shared/fonts.nix
   ];
 
   home.sessionVariables = {

@@ -16,13 +16,13 @@
   fileSystems."/" = 
     { device = "none";
       fsType = "tmpfs";
-      options = [ "size=10g" "mode=755"]
+      options = [ "size=10g" "mode=755"];
     };
 
   fileSystems."/home/lemon" = 
     { device = "none";
       fsType = "tmpfs";
-      options = [ "size=10g" "mode=755"]
+      options = [ "size=10g" "mode=777"];
     };
   
   fileSystems."/nix" =

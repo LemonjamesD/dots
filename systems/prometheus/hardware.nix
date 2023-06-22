@@ -8,10 +8,9 @@
   # if this fucks up: I cry
   environment.persistence."/nix/persist/system" = {
     directories = [
-      "/etc/nixos",
-      "/home/lemon"
-    ]
-  }
+      "/etc/nixos"
+    ];
+  };
 
   boot.loader = {
     efi = {

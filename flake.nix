@@ -9,7 +9,7 @@
     lilex-font.url = "github:LemonjamesD/Lilex-Flake/pre-compiled";
 
     # Impermanence
-    imperanence.url = "github:nix-community/impermanence";
+    impermanence.url = "github:nix-community/impermanence";
 
     # Home-manager packager
     home-manager.url = "github:nix-community/home-manager";
@@ -29,7 +29,7 @@
   };
 
   outputs = {
-    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, lilex-font, imperanence, ... 
+    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, lilex-font, impermanence, ... 
   }@inputs: let
     try-import = import ./helpers/try-import.nix;
 
@@ -48,7 +48,7 @@
       modules = [ 
         # Fix the file structure bruh
         inputs.fhs.nixosModules.default
-        "${inputs.impermanence}/nixos-manager.nix"
+        "${inputs.impermanence}/nixos.nix"
         # System
         (./configuration.nix)
         (./systems + "/${host}/hardware.nix")

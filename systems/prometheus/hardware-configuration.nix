@@ -31,7 +31,7 @@
     };
 
   fileSystems."/boot/efi" =
-    { device = "/dev/nvme0n1p4";
+    { device = "/dev/disk/by-uuid/6302-B95B";
       fsType = "vfat";
     };
     

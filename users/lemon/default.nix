@@ -1,5 +1,5 @@
 { config, pkgs, ... }: let
-
+  
 in {
   imports = [
     ./x11.nix
@@ -19,6 +19,9 @@ in {
     # GNUPG
     gnupg
     pinentry-curses
+
+    # Syncing
+    syncthing
   ];
 
   # bluetooth
@@ -37,6 +40,7 @@ in {
 
   # Nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = true;
   hardware.opengl = { # this fixes the "glXChooseVisual failed" bug, context: https://github.com/NixOS/nixpkgs/issues/47932
     enable = true;
     driSupport32Bit = true;

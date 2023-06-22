@@ -4,6 +4,15 @@
     ./hardware-configuration.nix
   ];
 
+  # Make my files persist
+  # if this fucks up: I cry
+  environment.persistence."/nix/persist/system" = {
+    directories = [
+      "/etc/nixos",
+      "/home/lemon"
+    ]
+  }
+
   boot.loader = {
     efi = {
       # canTouchEfiVariables = true;

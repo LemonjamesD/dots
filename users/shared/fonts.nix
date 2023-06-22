@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   fonts.fonts = with pkgs; [
@@ -6,5 +6,6 @@
     noto-fonts
     noto-fonts-emoji
     noto-fonts-emoji-blob-bin
+    inputs.lilex-font
   ];
 }

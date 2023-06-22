@@ -14,6 +14,7 @@ in {
     git
     home-manager
     comma
+    hyfetch
   ];
   
   # Remove old builds

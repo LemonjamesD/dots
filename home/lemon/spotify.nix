@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     # spotify
     spotify-tui
-    spotifyd
   ];
 
   services.spotifyd = {

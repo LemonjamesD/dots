@@ -5,6 +5,12 @@
     xdg-desktop-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     fhs.url = "github:GermanBread/nixos-fhs/stable";
 
+    # Lilex Font
+    lilex-font.url = "github:LemonjamesD/Lilex-Flake/pre-compiled";
+
+    # Impermanence
+    imperanence.url = "github:nix-community/impermanence";
+
     # Home-manager packager
     home-manager.url = "github:nix-community/home-manager";
     # helix bs (the workaround is insane)
@@ -23,7 +29,7 @@
   };
 
   outputs = {
-    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, ... 
+    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, lilex-font, imperanence, ... 
   }@inputs: let
     try-import = import ./helpers/try-import.nix;
 
@@ -41,7 +47,8 @@
       specialArgs = { inherit nixpkgs system stateVersion host user secrets inputs; };
       modules = [ 
         # Fix the file structure bruh
-        fhs.nixosModules.default
+        inputs.fhs.nixosModules.default
+        "${inputs.impermanence}/nixos-manager.nix"
         # System
         (./configuration.nix)
         (./systems + "/${host}/hardware.nix")

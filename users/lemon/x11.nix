@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     plasma-desktop
+    xorg.xinit
   ];
 
   services.xserver.enable = true;

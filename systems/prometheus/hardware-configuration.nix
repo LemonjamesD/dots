@@ -8,41 +8,48 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = 
+  fileSystems."/" =
     { device = "none";
       fsType = "tmpfs";
-      options = [ "size=10g" "mode=755"];
+      options = [ "size=20g" "mode=755" ];
     };
 
-  fileSystems."/home/lemon" = 
-    { device = "none";
-      fsType = "tmpfs";
-      options = [ "size=10g" "mode=777"];
-    };
-  
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/d86571e3-b794-42aa-baef-8ea57756e5cd";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/e05c9096-a531-434d-b741-9faf8cb3d9ae";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
     };
 
-  fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/6302-B95B";
-      fsType = "vfat";
+  fileSystems."/etc/nixos" =
+    { device = "/dev/disk/by-uuid/e05c9096-a531-434d-b741-9faf8cb3d9ae";
+      fsType = "btrfs";
+      options = [ "subvol=nixos" ];
     };
-    
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/ad0134a5-1404-4733-81e6-c2ea1edebdc6"; }
-    ];
 
-  fileSystems."/mnt/Gaming" =
-    { device = "/dev/disk/by-uuid/b909f5c5-311d-4750-ba60-ba1f165f2926";
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/15996e55-e55d-4669-b422-cb888f41d7dd";
       fsType = "btrfs";
     };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/79E6-06D2";
+      fsType = "vfat";
+    };
+
+  fileSystems."/etc/secrets" =
+    { device = "/dev/disk/by-uuid/e05c9096-a531-434d-b741-9faf8cb3d9ae";
+      fsType = "btrfs";
+      options = [ "subvol=secrets" ];
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/a2c02c12-5269-454d-8cd2-b138da0067ec"; }
+    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

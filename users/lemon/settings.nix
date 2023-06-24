@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, secrets, ... }:
 
 {
   # Allow Unfree
@@ -24,6 +24,7 @@
   # Default User
   users.users.lemon = {
     isNormalUser = true;
+    initialHashedPassword = secrets.passwd;
     extraGroups = [
       "wheel"
       "video"

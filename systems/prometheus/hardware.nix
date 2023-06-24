@@ -4,23 +4,15 @@
     ./hardware-configuration.nix
   ];
 
-  # Make my files persist
-  # if this fucks up: I cry
-  environment.persistence."/nix/persist/system" = {
-    directories = [
-      "/etc/nixos"
-    ];
-  };
-
   boot.loader = {
     efi = {
-      # canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
     };
     grub = {
       configurationLimit = 5;
       efiSupport = true;
-      efiInstallAsRemovable = true;
+      # efiInstallAsRemovable = true;
       device = "nodev";
       extraEntries = ''
         menuentry "Windows" {
@@ -40,12 +32,17 @@
     }; 
   };
 
-  fileSystems."/mnt/Programmador" =
+  fileSystems."/run/media/Gaming" =
+    { device = "/dev/disk/by-uuid/b909f5c5-311d-4750-ba60-ba1f165f2926";
+      fsType = "btrfs";
+    };
+
+  fileSystems."/run/media/Programmador" =
     { device = "/dev/disk/by-uuid/01D78420CB137970";
       fsType = "ntfs";
     };
 
-  fileSystems."/mnt/Programming" =
+  fileSystems."/run/media/Programming" =
     { device = "/dev/disk/by-uuid/7BE462B403C20D04";
       fsType = "ntfs";
     };

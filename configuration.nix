@@ -1,9 +1,15 @@
-{ config, pkgs, stateVersion, ... }: let
+{ config, pkgs, stateVersion, secrets, ... }: let
 in {
   nixpkgs.config = {
     allowUnfree = true;
     allowBroken = true;
   };
+
+  # Make FHS work
+  virtualisation.podman.enable = true;
+  services.fhs-compat.enable = true;
+
+  users.users.root.initialHashedPassword = secrets.passwd;
 
   networking.networkmanager.enable = true;
 

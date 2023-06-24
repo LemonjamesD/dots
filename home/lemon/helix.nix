@@ -4,7 +4,7 @@
     enable = true;
     package = inputs.helix-master.packages."x86_64-linux".default;
     settings = {
-      theme = "ayu_light_transparent";
+      theme = "ayu_mirage";
       icons = "nerdfonts";
       editor = {
         line-number = "relative";

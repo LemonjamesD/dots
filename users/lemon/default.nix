@@ -7,18 +7,13 @@ in {
     ./login-manager.nix
     ./polkit.nix
     ./settings.nix
-    #../shared/fonts.nix
+    ../shared/fonts.nix
   ];
 
   programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
-    pipewire
     ntfs3g
-
-    # GNUPG
-    gnupg
-    pinentry-curses
 
     # Syncing
     syncthing
@@ -26,14 +21,6 @@ in {
 
   # bluetooth
   hardware.bluetooth.enable = true;
-
-  # GNUPG
-  services.pcscd.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryFlavor = "curses";
-    enableSSHSupport = true;
-  };
 
   # Flatpak
   services.flatpak.enable = true;

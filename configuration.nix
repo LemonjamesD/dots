@@ -14,14 +14,50 @@ in {
   networking.networkmanager.enable = true;
 
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    firefox
-    git
+    # Setup home-manager
     home-manager
+
+    # Used to look up stuff
+    firefox
+
+    # Audio
+    pipewire
+
+    # Edit Files
+    vim
+    helix
+
+    # Get files from the web
+    wget
+    git
+
+    # Look up stuff
     comma
+
+    # See system info
     hyfetch
+    
+    # Verify commits and such
+    gnupg
+    pinentry-curses
   ];
+
+  # Stupid stupid git thing
+  # https://github.com/NixOS/nixpkgs/issues/24311
+  environment.extraInit = ''
+    # Do not want this in the environment. NixOS always sets it and does not
+    # provide any option not to, so I must unset it myself via the
+    # environment.extraInit option.
+    unset -v SSH_ASKPASS
+  '';
+
+  # GNUPG
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "curses";
+    enableSSHSupport = true;
+  };
   
   # Remove old builds
   nix.settings.auto-optimise-store = true;

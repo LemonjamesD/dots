@@ -13,6 +13,7 @@
 
     # Home-manager packager
     home-manager.url = "github:nix-community/home-manager";
+
     # helix bs (the workaround is insane)
     dream2nix.url = "github:nix-community/dream2nix";
     nci = {
@@ -24,7 +25,11 @@
       inputs.nci.follows = "nci";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    # Extra hyprland things
     hypr-contrib.url = "github:hyprwm/contrib";
+
+    # Auto-flatpaks
     flatpaks.url = "github:GermanBread/declarative-flatpak/stable";
   };
 

@@ -52,5 +52,15 @@
         };
       };
     };
+    languages = {
+      language = [
+        {
+          name = "rust";
+        }
+      ];
+      language-server.rust-analyzer.config.check = {
+        command = "clippy";
+      };
+    };
   };
 }

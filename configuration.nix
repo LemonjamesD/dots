@@ -1,4 +1,4 @@
-{ config, pkgs, stateVersion, secrets, ... }: let
+{ config, lib, pkgs, stateVersion, secrets, ... }: let
 in {
   nixpkgs.config = {
     allowUnfree = true;
@@ -13,6 +13,7 @@ in {
 
   networking.networkmanager.enable = true;
 
+  environment.defaultPackages = lib.mkForce [];
   environment.systemPackages = with pkgs; [
     # Setup home-manager
     home-manager
@@ -40,7 +41,19 @@ in {
     # Verify commits and such
     gnupg
     pinentry-curses
+
+    # Replace coreutils
+    busybox
+
+    # for zipping/unzipping
+    p7zip
+    zip
+    unzip
   ];
+
+  environment.sessionVariables = rec {
+    EDITOR = "hx";
+  };
 
   # Stupid stupid git thing
   # https://github.com/NixOS/nixpkgs/issues/24311

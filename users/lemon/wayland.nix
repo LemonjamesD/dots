@@ -11,8 +11,8 @@ in {
     SDL_VIDEODRIVER = "wayland";
     XDG_SESSION_TYPE = "wayland";
     LIBVA_DRIVER_NAME = "nvidia";
-    # GBM_BACKEND = "nvidia-drm";
-    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     WLR_NO_HARDWARE_CURSORS = "1";
   };
 
@@ -44,7 +44,7 @@ in {
   programs.hyprland.package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   programs.hyprland = {
     enable = true;
-    nvidiaPatches = true;
+    # nvidiaPatches = true;
   };
 
   xdg.portal = {

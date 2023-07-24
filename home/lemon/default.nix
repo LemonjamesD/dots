@@ -8,6 +8,7 @@ in {
   imports = [
     ./helix.nix
     ./spotify.nix
+    ./espanso.nix
     ../shared/gaming.nix
   ];
 
@@ -27,6 +28,7 @@ in {
     };
     extraConfig = {
       credential.helper = "store";
+      safe.directory = "*";
     };
   };
 
@@ -156,7 +158,6 @@ in {
     SDL2
     sqlitebrowser
     youtube-dl
-    protonvpn-gui
     nvtop
     libqalculate
     htop
@@ -164,9 +165,13 @@ in {
     blender
     sqlite
     inkscape
+    protonvpn-gui
+    audacity
+    kdenlive
 
     # Controller
     qjoypad
+    xboxdrv
     jstest-gtk
 
     # Bluetooth

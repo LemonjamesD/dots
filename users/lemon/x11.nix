@@ -1,10 +1,12 @@
 { config, pkgs, ... }: 
 
 {
-  services.xserver.enable = true;
-  services.xserver.desktopManager = {
-    xterm.enable = true;
-    xfce.enable = true;
+  environment.systemPackages = with pkgs; [
+    xorg.xinit
+  ];
+
+  services.xserver = {
+    enable = true;
+    desktopManager.plasma5.enable = true;
   };
-  services.xserver.displayManager.defaultSession = "xfce";
 }

@@ -1,41 +1,59 @@
-{ secrets }:
+{ secrets, ... }:
 
 {
   networking.firewall = {
-    allowedUDPPorts = [ 51820 ]; # Clients and peers can use the same port, see listenport
+    enable = true;
+    # if packets are still dropped, they will show up in dmesg
+    logReversePathDrops = true;
+    # wireguard trips rpfilter up
+    extraCommands = ''
+     ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN
+     ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN
+    '';
+    extraStopCommands = ''
+     ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN || true
+     ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN || true
+    '';
   };
   
-  networking.wireguard.interfaces = {
-    # "wg0" is the network interface name. You can name the interface arbitrarily.
-    wg0 = {
-      # Determines the IP address and subnet of the client's end of the tunnel interface.
-      ips = [ "10.2.0.2/32" ];
-      listenPort = 51820; # to match firewall allowedUDPPorts (without this wg uses random port numbers)
+  environment.etc."NetworkManager/system-connections/Slovakia-wg0.nmconnection".text = ''
+    [connection]
+    id=wg0
+    uuid=4a88b262-cfdd-46fa-bd20-5d73d094e9e6
+    type=wireguard
+    interface-name=Slovakia-wg0
 
-      # Path to the private key file.
-      #
-      # Note: The private key can also be included inline via the privateKey option,
-      # but this makes the private key world-readable; thus, using privateKeyFile is
-      # recommended.
-      privateKey = secrets.proton-private-key;
+    [wireguard]
+    private-key=${secrets.proton-private-key}
 
-      peers = [
-        {
-          # Public key of the server (not a file path).
-          publicKey = "${secrets.proton-public-key}";
+    [wireguard-peer.${secrets.proton-public-key}]
+    endpoint=${secrets.proton-endpoint}:51820
+    allowed-ips=0.0.0.0/0;
 
-          # Forward all the traffic via VPN.
-          allowedIPs = [ "0.0.0.0/0" ];
-          # Or forward only particular subnets
-          #allowedIPs = [ "10.100.0.1" "91.108.12.0/22" ];
+    [ipv4]
+    address1=10.2.0.2/32
+    dns=10.2.0.1;
+    dns-search=~;
+    method=manual
 
-          # Set this to the server IP and port.
-          endpoint = "${secrets.proton-endpoint}:51820"; # ToDo: route to endpoint not automatically configured https://wiki.archlinux.org/index.php/WireGuard#Loop_routing https://discourse.nixos.org/t/solved-minimal-firewall-setup-for-wireguard-client/7577
+    [ipv6]
+    addr-gen-mode=default
+    method=disabled
 
-          # Send keepalives every 25 seconds. Important to keep NAT tables alive.
-          persistentKeepalive = 25;
-        }
-      ];
-    };
+    [proxy]
+  '';
+  
+  networking.wireguard.enable = true;
+  networking.wireguard.interfaces."wg0" = {
+    ips = [ "10.2.0.2/32" ];
+    listenPort = 51820;
+    
+    privateKey = secrets.proton-private-key;
+
+    peers = [{
+      publicKey = "${secrets.proton-public-key}";
+      allowedIPs = [ "0.0.0.0/0" ];
+    }];
   };
+
 }

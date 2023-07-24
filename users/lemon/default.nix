@@ -1,5 +1,5 @@
-{ config, pkgs, ... }: let
-  
+{ config, pkgs, secrets, ... }: let
+
 in {
   imports = [
     ./x11.nix
@@ -8,6 +8,9 @@ in {
     ./polkit.nix
     ./settings.nix
     ../shared/fonts.nix
+    ../shared/razer.nix
+    # fucking broken don't feel like fixing lol!!!!
+    # ../shared/protonvpn.nix
   ];
 
   programs.kdeconnect.enable = true;
@@ -27,7 +30,7 @@ in {
 
   # Nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
+  # hardware.nvidia.open = true; # I swear if this is having problems with Hyprland
   hardware.opengl = { # this fixes the "glXChooseVisual failed" bug, context: https://github.com/NixOS/nixpkgs/issues/47932
     enable = true;
     driSupport32Bit = true;

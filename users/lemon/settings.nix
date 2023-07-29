@@ -29,6 +29,7 @@
       "wheel"
       "video"
       "audio"
+      "openrazor"
     ];
   };
 

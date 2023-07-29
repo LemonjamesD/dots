@@ -49,6 +49,9 @@ in {
     };
   };
 
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+  ];
 
   home.packages = with pkgs; [
     # Haguichi

@@ -1,6 +1,11 @@
 { config, pkgs, inputs, ...}: let
 
 in {
+  imports = [
+    ./login-manager.nix
+    ../shared/nvidia-open.nix
+  ];
+
   # make stuff work on wayland
   environment.variables = {
     _JAVA_AWT_WM_NONREPARENTING = "1";
@@ -31,20 +36,16 @@ in {
     libsForQt5.polkit-kde-agent
     qt5ct
     libva
-    #nvidia-vaapi-driver
   ];
 
   # Enable polkit
   security.polkit.enable = true;
 
-  # Nvidia fix
-  hardware.nvidia.modesetting.enable = true;
-  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
-
   programs.hyprland.package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   programs.hyprland = {
     enable = true;
-    # nvidiaPatches = true;
+    xwayland.enable = true;
+    nvidiaPatches = true;
   };
 
   xdg.portal = {

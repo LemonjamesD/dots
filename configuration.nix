@@ -49,6 +49,8 @@ in {
     p7zip
     zip
     unzip
+
+    xfce.thunar
   ];
 
   environment.sessionVariables = rec {

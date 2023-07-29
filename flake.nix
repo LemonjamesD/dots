@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-nvidia.url = "github:nixos/nixpkgs/nixos-23.05";
     hyprland.url = "github:hyprwm/Hyprland";
     xdg-desktop-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     fhs.url = "github:GermanBread/nixos-fhs/stable";
@@ -29,12 +30,10 @@
   };
 
   outputs = {
-    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, lilex-font, impermanence, ... 
+    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, lilex-font, impermanence, nixpkgs-nvidia, ... 
   }@inputs: let
-    try-import = import ./helpers/try-import.nix;
-
     system = "x86_64-linux";
-    stateVersion = "23.05";
+    stateVersion = "23.11";
 
     secrets = import "/etc/nixos/secrets.nix";
 

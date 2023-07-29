@@ -1,9 +1,15 @@
 { pkgs, ... }:
 
 {
-  hardware.openrazer.enable = true;
+  hardware.openrazer = {
+    enable = true;
+    users = [ "lemon" ];
+  };
   environment.systemPackages = with pkgs; [
-    openrazor-daemon
+    openrazer-daemon
     polychromatic
+  ];
+  boot.kernelModules = [
+    "openrazer"
   ];
 }

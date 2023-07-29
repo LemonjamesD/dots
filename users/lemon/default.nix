@@ -1,10 +1,12 @@
 { config, pkgs, secrets, ... }: let
-
+  wayland = true;
+  backend = if wayland then
+    ./wayland.nix
+  else
+    ./x11.nix;
 in {
   imports = [
-    ./x11.nix
-    ./wayland.nix
-    ./login-manager.nix
+    backend
     ./polkit.nix
     ./settings.nix
     ../shared/fonts.nix
@@ -27,14 +29,6 @@ in {
 
   # Flatpak
   services.flatpak.enable = true;
-
-  # Nvidia
-  services.xserver.videoDrivers = [ "nvidia" ];
-  # hardware.nvidia.open = true; # I swear if this is having problems with Hyprland
-  hardware.opengl = { # this fixes the "glXChooseVisual failed" bug, context: https://github.com/NixOS/nixpkgs/issues/47932
-    enable = true;
-    driSupport32Bit = true;
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

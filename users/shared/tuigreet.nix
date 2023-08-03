@@ -1,4 +1,4 @@
-{ config, pkgs, user, inputs, slogan ? "Pure Joy, Functions.", cmd, ... }:
+{ config, pkgs, user, inputs, slogan ? "Pure Joy, Functions.", cmd ? "echo Hello", ... }:
 {
   environment.systemPackages = with pkgs; [
     greetd.tuigreet
@@ -9,7 +9,7 @@
     settings = {
       default_session = {
         command = ''
-          ${pkgs.greetd.tuigreet}/bin/tuigreet -g ${slogan} --cmd ${cmd} -r --remember-session --time --asterisks --power-shutdown shutdown now --power-reboot reboot
+          ${pkgs.greetd.tuigreet}/bin/tuigreet -g \"${slogan}\" -c \"${cmd}\" -r --remember-session --time --asterisks --power-shutdown shutdown now --power-reboot reboot
         '';
         user = user;
       };

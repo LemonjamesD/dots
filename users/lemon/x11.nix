@@ -1,8 +1,8 @@
-{ config, pkgs, ... }: 
+args@{ config, pkgs, ... }: 
 
 {
   imports = [
-    ../shared/tuigreet.nix { cmd = "wmderland"; }
+    (import ../shared/tuigreet.nix (args // { cmd = "wmserland"; }))
     ../shared/nvidia.nix
   ];
 
@@ -13,6 +13,10 @@
 
   services.xserver = {
     enable = true;
-    desktopManager.wmderland.enable = true;
+  };
+  
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-kde ];
   };
 }

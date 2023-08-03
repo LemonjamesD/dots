@@ -1,8 +1,8 @@
-{ config, pkgs, inputs, ...}: let
+args@{ config, pkgs, inputs, ...}: let
 
 in {
   imports = [
-    ../shared/tuigreet.nix { cmd = "Hyprland"; }
+    (import ../shared/tuigreet.nix (args // { cmd = "Hyprland"; }))
     ../shared/nvidia-open.nix
   ];
 

@@ -1,4 +1,4 @@
-{ config, pkgs, user, inputs, slogan ? "Pure Joy, Functions.", cmd ? "echo Hello", ... }:
+{ config, pkgs, user, inputs, slogan ? "Pure Joy, Functions.", cmd, ... }:
 {
   environment.systemPackages = with pkgs; [
     greetd.tuigreet

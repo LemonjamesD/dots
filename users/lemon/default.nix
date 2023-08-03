@@ -1,5 +1,5 @@
 { config, pkgs, secrets, ... }: let
-  wayland = true;
+  wayland = false;
   backend = if wayland then
     ./wayland.nix
   else

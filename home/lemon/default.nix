@@ -171,6 +171,9 @@ in {
     protonvpn-gui
     audacity
     kdenlive
+    sccache
+    llvmPackages_16.libcxxabi
+    poetry
 
     # Controller
     qjoypad

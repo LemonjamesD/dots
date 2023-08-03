@@ -2,7 +2,7 @@
 
 in {
   imports = [
-    ./login-manager.nix
+    ../shared/tuigreet.nix { cmd = "Hyprland"; }
     ../shared/nvidia-open.nix
   ];
 

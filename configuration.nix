@@ -1,4 +1,4 @@
-{ config, lib, pkgs, stateVersion, secrets, ... }: let
+{ config, lib, pkgs, machine-settings, secrets, ... }: let
 in {
   nixpkgs.config = {
     allowUnfree = true;
@@ -83,6 +83,6 @@ in {
   };
 
   system.autoUpgrade.enable = true;
-  system.stateVersion = stateVersion;
+  system.stateVersion = machine-settings.stateVersion;
 }
 

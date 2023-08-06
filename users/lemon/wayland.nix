@@ -30,7 +30,8 @@ in {
     wlr-randr
     eww-wayland
     wofi
-    copyq
+    wofi-emoji
+    wl-clipboard
 
     libsForQt5.qt5.qtwayland
     libsForQt5.polkit-kde-agent

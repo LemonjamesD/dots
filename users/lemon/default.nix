@@ -1,5 +1,5 @@
 { config, pkgs, secrets, ... }: let
-  wayland = false;
+  wayland = true;
   backend = if wayland then
     ./wayland.nix
   else
@@ -11,6 +11,7 @@ in {
     ./settings.nix
     ../shared/fonts.nix
     ../shared/razer.nix
+    ../shared/qmk.nix
     # fucking broken don't feel like fixing lol!!!!
     # ../shared/protonvpn.nix
   ];

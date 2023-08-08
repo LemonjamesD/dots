@@ -1,9 +1,9 @@
 args@{ config, pkgs, ... }:
 
 {
-  imports = [
-    (import ../shared/tuigreet.nix (args // { cmd = "startx"; }))
-    ../shared/nvidia.nix
+  imports = [] ++ machine-settings.mkModulePaths [
+    ./system/nvidia.nix
+    ./system/tuigreen.nix (args // { cmd = "startx"; }))
   ];
 
   environment.systemPackages = with pkgs; [

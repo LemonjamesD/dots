@@ -44,7 +44,7 @@
         "${inputs.impermanence}/nixos.nix"
         # System
         (./configuration.nix)
-        (./systems + "/${machine-settings.host}/hardware.nix")
+        (./machines + "/${machine-settings.host}/hardware.nix")
         # User
         (./users + "/${machine-settings.user}/default.nix")
       ];

@@ -29,6 +29,7 @@ in {
     extraConfig = {
       credential.helper = "store";
       safe.directory = "*";
+      init.defaultBranch = "main";
     };
   };
 
@@ -106,7 +107,7 @@ in {
 
     # Rust
     rustup
-    # rust-analyzer
+    # rust-analyzer-nightly
     pkg-config
 
     # Screenshots

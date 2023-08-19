@@ -2,6 +2,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-nvidia.url = "github:nixos/nixpkgs/nixos-23.05";
+    # for rust-analyzer
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland.url = "github:hyprwm/Hyprland";
     xdg-desktop-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     fhs.url = "github:GermanBread/nixos-fhs/stable";
@@ -30,7 +35,7 @@
   };
 
   outputs = {
-    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, lilex-font, impermanence, nixpkgs-nvidia, ... 
+    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, lilex-font, impermanence, nixpkgs-nvidia, fenix, ... 
   }@inputs: let
     system = "x86_64-linux";
     stateVersion = "23.11";
@@ -38,13 +43,16 @@
     secrets = import "/etc/nixos/secrets.nix";
 
     # Get the host and user
-    host = secrets.host;
-    user = secrets.user;
+    host = "prometheus";
+    user = "lemon";
     
     mkNixOS = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit nixpkgs system stateVersion host user secrets inputs; };
-      modules = [ 
+      modules = [
+        # ({ pkgs, ... }: {
+        #   nixpkgs.overlays = [ fenix.overlays.default ];
+        # })
         # Fix the file structure bruh
         inputs.fhs.nixosModules.default
         "${inputs.impermanence}/nixos.nix"
@@ -55,7 +63,9 @@
         (./users + "/${user}/default.nix")
       ];
     };
+
   in {
+  
     homeConfigurations = import ./home/home-configuration.nix { 
       inherit home-manager nixpkgs system stateVersion host user secrets inputs; 
     };

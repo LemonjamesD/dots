@@ -193,9 +193,9 @@ in {
       "flathub-beta" = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
     };
     packages = [
-      "flathub:com.discordapp.Discord"
-      "flathub:de.shorsh.discord-screenaudio"
-      "flathub:xyz.armcord.ArmCord"
+      "flathub:com.discordapp.Discord//stable"
+      "flathub:de.shorsh.discord-screenaudio//stable"
+      "flathub:xyz.armcord.ArmCord//stable"
     ];
   };
 }

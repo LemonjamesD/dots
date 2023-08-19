@@ -20,15 +20,15 @@
     # Home-manager packager
     home-manager.url = "github:nix-community/home-manager";
     # helix bs (the workaround is insane)
-    dream2nix.url = "github:nix-community/dream2nix";
+    # dream2nix.url = "github:nix-community/dream2nix";
     nci = {
       url = "github:yusdacra/nix-cargo-integration";
-      inputs.dream2nix.follows = "dream2nix";
+      # inputs.dream2nix.follows = "dream2nix";
     };
     helix-master = {
       url = "github:LemonjamesD/helix/new-daily-driver";
-      inputs.nci.follows = "nci";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nci.follows = "nci";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     hypr-contrib.url = "github:hyprwm/contrib";
     flatpaks.url = "github:GermanBread/declarative-flatpak?rev=fb31283f55f06b489f2baf920201e8eb73c9a0d3";

@@ -112,6 +112,27 @@
         "type": "github"
       }
     },
+    "fenix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-analyzer-src": "rust-analyzer-src"
+      },
+      "locked": {
+        "lastModified": 1691821122,
+        "narHash": "sha256-X+QjauytB2WbW99woLNjn0FGOlyuW+GUPryl36ZCHs8=",
+        "owner": "nix-community",
+        "repo": "fenix",
+        "rev": "f8800cb5a572fcdf25ea6fccf89d5ff25f6ad053",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "fenix",
+        "type": "github"
+      }
+    },
     "fhs": {
       "inputs": {
         "nixpkgs": "nixpkgs_2",
@@ -694,11 +715,11 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1685836261,
-        "narHash": "sha256-rpxEPGeW4JZJcH58SQApJUtJ7w78VPtkF6Cut/Pq6Kg=",
+        "lastModified": 1691654369,
+        "narHash": "sha256-gSILTEx1jRaJjwZxRlnu3ZwMn1FVNk80qlwiCX8kmpo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "dd4982554e18b936790da07c4ea2db7c7600f283",
+        "rev": "ce5e4a6ef2e59d89a971bc434ca8ca222b9c7f5e",
         "type": "github"
       },
       "original": {
@@ -809,6 +830,7 @@
     "root": {
       "inputs": {
         "dream2nix": "dream2nix",
+        "fenix": "fenix",
         "fhs": "fhs",
         "flatpaks": "flatpaks",
         "helix-master": "helix-master",
@@ -821,6 +843,23 @@
         "nixpkgs": "nixpkgs_9",
         "nixpkgs-nvidia": "nixpkgs-nvidia",
         "xdg-desktop-portal-hyprland": "xdg-desktop-portal-hyprland"
+      }
+    },
+    "rust-analyzer-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1691752485,
+        "narHash": "sha256-uTUzlpV3chzwFinpswAfc76RA3y+5eoPQBW6BLYp1sI=",
+        "owner": "rust-lang",
+        "repo": "rust-analyzer",
+        "rev": "1fde334195f0a8ac43d242bc871e6723e963620d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rust-lang",
+        "ref": "nightly",
+        "repo": "rust-analyzer",
+        "type": "github"
       }
     },
     "rust-overlay": {

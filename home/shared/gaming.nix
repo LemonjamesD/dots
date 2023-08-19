@@ -30,6 +30,10 @@
     # OSU
     osu-lazer-bin
 
+    # Nintendo
+    yuzu-mainline
+    citra-nightly
+
     # Retro Games
     retroarchFull
     dolphin-emu

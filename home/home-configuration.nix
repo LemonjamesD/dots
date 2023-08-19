@@ -18,6 +18,9 @@ in
     pkgs = pkgs;
     extraSpecialArgs = { inherit username homeDirectory secrets stateVersion inputs; }; 
     modules = [
+      # ({ pkgs, ... }: {
+      #   nixpkgs.overlays = [ inputs.fenix.overlays.default ];
+      # })
       inputs.flatpaks.homeManagerModules.default
       home-nix
     ];

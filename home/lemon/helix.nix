@@ -4,7 +4,7 @@
     enable = true;
     package = inputs.helix-master.packages."x86_64-linux".default;
     settings = {
-      theme = "ayu_mirage";
+      theme = "catppuccin_frappe";
       icons = "nerdfonts";
       editor = {
         line-number = "relative";
@@ -56,6 +56,14 @@
       language = [
         {
           name = "rust";
+        }
+        {
+          name = "c";
+          file-types = ["c" "h" "cpp" "hpp"];
+          indent = {
+            tab-width = 4;
+            unit = "    ";
+          };
         }
       ];
       language-server.rust-analyzer.config.check = {

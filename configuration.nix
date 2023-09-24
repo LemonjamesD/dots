@@ -26,6 +26,7 @@ in {
 
     # Edit Files
     vim
+    neovim
     helix
 
     # Get files from the web

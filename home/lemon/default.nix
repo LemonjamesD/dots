@@ -7,6 +7,7 @@ in {
 
   imports = [
     ./helix.nix
+    ./nvim.nix
     ./spotify.nix
     ./espanso.nix
     ../shared/gaming.nix
@@ -177,6 +178,11 @@ in {
     llvmPackages_16.libcxxabi
     poetry
     ntfy-sh
+    mono
+    vscode
+    qbittorrent
+    vlc
+    docker
 
     # Controller
     qjoypad

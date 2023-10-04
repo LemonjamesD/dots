@@ -50,6 +50,7 @@
           render = true;
           rainbow-option = "dim";
         };
+        rulers = [80 120];
       };
     };
     languages = {
@@ -64,6 +65,18 @@
             tab-width = 4;
             unit = "    ";
           };
+        }
+        {
+          name = "cobol";
+          file-types = ["cob"];
+          scope = "main.cob";
+          comment-token = "*";
+          roots = ["main.cob"];
+          indent = {
+            tab-width = 2;
+            unit = "  ";
+          };
+          rulers = [7 12 72];
         }
       ];
       language-server.rust-analyzer.config.check = {

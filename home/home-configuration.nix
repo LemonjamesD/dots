@@ -21,6 +21,7 @@ in
       # ({ pkgs, ... }: {
       #   nixpkgs.overlays = [ inputs.fenix.overlays.default ];
       # })
+      inputs.nixvim.homeManagerModules.nixvim
       inputs.flatpaks.homeManagerModules.default
       home-nix
     ];

@@ -1,15 +1,10 @@
 { pkgs, inputs, ... }:
 
 {
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
-    viAlias = true;
-    vimAlias = true;
-    extraConfig = ''
-      colorscheme catppuccin "catppuccin-frappe"
-    '';
-    plugins = with pkgs.vimPlugins; [
-      catppuccin-vim
-    ];
+
+    # colorschemes.catppuccin-frappe.enable = true;
+    plugins.lightline.enable = true;
   };
 }

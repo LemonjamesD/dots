@@ -44,25 +44,22 @@
     secrets = import "/etc/nixos/secrets.nix";
     machine-settings = import ./settings/machine-settings.nix;
 
-    # Get the host and user
-    host = "prometheus";
-    user = "lemon";
+    system = machine-settings.system;
+    host = machine-settings.host;
+    user = machine-settings.user;
+    stateVersion = machine-settings.stateVersion;
     
     mkNixOS = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit nixpkgs system stateVersion host user secrets inputs; };
+      specialArgs = { inherit nixpkgs system stateVersion machine-settings host user secrets inputs; };
       modules = [
-        # ({ pkgs, ... }: {
-        #   nixpkgs.overlays = [ fenix.overlays.default ];
-        # })
-        # Fix the file structure bruh
         inputs.fhs.nixosModules.default
         "${inputs.impermanence}/nixos.nix"
         # System
         (./configuration.nix)
         (./machines + "/${machine-settings.host}/hardware.nix")
         # User
-        (./users + "/${machine-settings.user}/default.nix")
+        (./system + "/${machine-settings.user}/default.nix")
       ];
     };
 

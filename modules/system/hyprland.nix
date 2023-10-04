@@ -1,9 +1,9 @@
 args@{ config, pkgs, machine-settings, inputs, ...}: let
 
 in {
-  imports = [] ++ machine-settings.mkModulePaths [
-    ./system/nvidia-open.nix
-    ./system/tuigreet.nix (args // { cmd = "Hyprland"; })
+  imports = [
+    ./nvidia-open.nix
+    ./tuigreet.nix (args // { cmd = "Hyprland"; })
   ];
 
   # make stuff work on wayland

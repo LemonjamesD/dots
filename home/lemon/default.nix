@@ -10,7 +10,8 @@ in {
     ./nvim.nix
     ./spotify.nix
     ./espanso.nix
-    ../shared/gaming.nix
+  ] ++ machine-settings.mkModulePaths [
+    ./home/gaming.nix
   ];
 
   home.sessionVariables = {

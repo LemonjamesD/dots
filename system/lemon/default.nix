@@ -1,20 +1,15 @@
 { config, pkgs, machine-settings, secrets, ... }: let
-  wayland = true;
-  backend = if wayland then
-    ./wayland.nix
-  else
-    ./x11.nix;
+
 in {
   imports = [
-    backend
-    ./polkit.nix
     ./settings.nix
-    # fucking broken don't feel like fixing lol!!!!
-    # ../shared/protonvpn.nix
   ] ++ machine-settings.mkModulePaths [
     ./system/fonts.nix
     ./system/razer.nix
     ./system/qmk.nix
+    ./system/pipewire.nix
+    ./system/hyprland.nix
+    ./system/polkit.nix
   ];
 
   programs.kdeconnect.enable = true;
@@ -37,17 +32,6 @@ in {
 
   virtualisation.docker.enable = true;
 
-  # Enable sound.
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-  };
-  
   services.gvfs.enable = true;
 
   # env vars

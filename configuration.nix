@@ -26,6 +26,7 @@ in {
 
     # Edit Files
     vim
+    neovim
     helix
 
     # Get files from the web
@@ -81,6 +82,10 @@ in {
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
+  nix.extraOptions = ''
+    min-free = ${toString (1024 * 1024 * 1024)}
+    max-free = ${toString (10 * 1024 * 1024 * 1024)}
+  '';
 
   system.autoUpgrade.enable = true;
   system.stateVersion = machine-settings.stateVersion;

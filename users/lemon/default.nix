@@ -35,6 +35,8 @@ in {
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  virtualisation.docker.enable = true;
+
   # Enable sound.
   security.rtkit.enable = true;
   services.pipewire = {

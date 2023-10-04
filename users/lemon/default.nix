@@ -1,4 +1,4 @@
-{ config, pkgs, secrets, ... }: let
+{ config, pkgs, machine-settings, secrets, ... }: let
   wayland = true;
   backend = if wayland then
     ./wayland.nix
@@ -9,11 +9,12 @@ in {
     backend
     ./polkit.nix
     ./settings.nix
-    ../shared/fonts.nix
-    ../shared/razer.nix
-    ../shared/qmk.nix
     # fucking broken don't feel like fixing lol!!!!
     # ../shared/protonvpn.nix
+  ] ++ machine-settings.mkModulePaths [
+    ./system/fonts.nix
+    ./system/razer.nix
+    ./system/qmk.nix
   ];
 
   programs.kdeconnect.enable = true;

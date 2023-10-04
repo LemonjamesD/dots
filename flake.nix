@@ -41,10 +41,8 @@
   outputs = {
     self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, lilex-font, impermanence, nixpkgs-nvidia, fenix, nixvim, ... 
   }@inputs: let
-    system = "x86_64-linux";
-    stateVersion = "23.11";
-
     secrets = import "/etc/nixos/secrets.nix";
+    machine-settings = import ./settings/machine-settings.nix;
 
     # Get the host and user
     host = "prometheus";
@@ -62,20 +60,20 @@
         "${inputs.impermanence}/nixos.nix"
         # System
         (./configuration.nix)
-        (./systems + "/${host}/hardware.nix")
+        (./machines + "/${machine-settings.host}/hardware.nix")
         # User
-        (./users + "/${user}/default.nix")
+        (./users + "/${machine-settings.user}/default.nix")
       ];
     };
 
   in {
   
     homeConfigurations = import ./home/home-configuration.nix { 
-      inherit home-manager nixpkgs system stateVersion host user secrets inputs; 
+      inherit home-manager nixpkgs machine-settings secrets inputs; 
     };
 
     nixosConfigurations = {
-      "${host}" = mkNixOS;
+      "${machine-settings.host}" = mkNixOS;
       "nixos" = mkNixOS;
     };
   };

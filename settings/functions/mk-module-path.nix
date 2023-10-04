@@ -1,0 +1,1 @@
+map (f: builtins.dirOf f + "../../module" + ("/./" + builtins.baseNameOf f))

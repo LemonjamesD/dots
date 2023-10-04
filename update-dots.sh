@@ -3,7 +3,7 @@ set PAST $PWD
 cd /etc/nixos
 
 # Update Git Main Branch
-git checkout main
+git checkout refactorv2
 git pull
 git add .
 git commit -m "[SCRIPT] Updated dot files! 🚀"

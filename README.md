@@ -4,7 +4,7 @@
 - ![Modules](modules)
   * ![Home Settings](modules/home)
     * ![Lemon](modules/home/lemon.nix)
-  * ![System Settings](modules/system]
+  * ![System Settings](modules/system)
     * ![Lemon](modules/system/lemon.nix)
 - ![Home](home)
   * ![Lemon](home/lemon)

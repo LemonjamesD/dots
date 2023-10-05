@@ -5,7 +5,7 @@
   * ![Users](home/users)
     * ![Lemon](home/users/lemon)
       * ![Helix Config](home/users/lemon/helix.nix)
-- ![Hyprland](https://github.com/LemonjamesD/dots/tree/eww)
+- ![Hyprland](https://github.com/LemonjamesD/dots/tree/hyprland)
 - ![Systems](systems)
   * ![Prometheus](systems/prometheus)
 - ![NixOs](/)

@@ -3,12 +3,12 @@
 in {
   imports = [
   ] ++ machine-settings.mkSystemModulePaths [
-    ./system/fonts.nix
-    ./system/razer.nix
-    ./system/qmk.nix
-    ./system/pipewire.nix
-    ./system/hyprland.nix
-    ./system/polkit.nix
+    ./fonts.nix
+    ./razer.nix
+    ./qmk.nix
+    ./pipewire.nix
+    ./hyprland.nix
+    ./polkit.nix
   ];
 
   programs.kdeconnect.enable = true;

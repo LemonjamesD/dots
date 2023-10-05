@@ -11,7 +11,7 @@ in {
     ./spotify.nix
     ./espanso.nix
   ] ++ machine-settings.mkHomeModulePaths [
-    ./home/gaming.nix
+    ./gaming.nix
   ];
 
   home.sessionVariables = {

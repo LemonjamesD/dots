@@ -7,4 +7,5 @@ sudo mount <btrfs> -o subvol=nix /mnt/etc/nix
 sudo mount <btrfs> -o subvol=store /mnt/etc/nix/store
 sudo mount <btrfs> -o subvol=home /mnt/home
 sudo mount <boot> /mnt/boot
+git clone https://github.com/LemonjamesD/dots.git -C /mnt/etc/nixos
 ```

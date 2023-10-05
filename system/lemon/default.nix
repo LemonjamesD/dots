@@ -2,7 +2,6 @@
 
 in {
   imports = [
-    ./settings.nix
   ] ++ machine-settings.mkSystemModulePaths [
     ./system/fonts.nix
     ./system/razer.nix

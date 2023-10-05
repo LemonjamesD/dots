@@ -3,7 +3,7 @@ args@{ config, pkgs, machine-settings, inputs, ...}: let
 in {
   imports = [
     ./nvidia-open.nix
-    ./tuigreet.nix (args // { cmd = "Hyprland"; })
+    ./hyprland-tuigreet.nix
   ];
 
   # make stuff work on wayland

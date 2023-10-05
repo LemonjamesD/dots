@@ -1,1 +1,1 @@
-map (f: "../../modules/home" + "/./" + builtins.baseNameOf f)
+map (f: "/etc/nixos/modules/home/${builtins.baseNameOf f}")

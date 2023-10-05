@@ -53,6 +53,7 @@
       inherit system;
       specialArgs = { inherit nixpkgs system stateVersion machine-settings host user secrets inputs; };
       modules = [
+        machine-settings.system-settings
         inputs.fhs.nixosModules.default
         "${inputs.impermanence}/nixos.nix"
         # System
@@ -66,7 +67,7 @@
   in {
   
     homeConfigurations = import ./home/home-configuration.nix { 
-      inherit home-manager nixpkgs machine-settings secrets inputs; 
+      inherit home-manager nixpkgs machine-settings secrets inputs host user system stateVersion; 
     };
 
     nixosConfigurations = {

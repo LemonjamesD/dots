@@ -1,4 +1,4 @@
-{ system, nixpkgs, home-manager, user, secrets, stateVersion, inputs, ... }:
+{ system, nixpkgs, home-manager, user, secrets, stateVersion, machine-settings, inputs, ... }:
 
 let
   username = user;
@@ -11,16 +11,14 @@ let
     config.xdg.configHome = configHome;
   };
 
-  home-nix = (../home + "/${username}");
+  home-nix = "/etc/nixos/home/${username}";
 in
 {
-  "${username}" = home-manager.lib.homeManagerConfiguration {
+  "${user}" = home-manager.lib.homeManagerConfiguration {
     pkgs = pkgs;
-    extraSpecialArgs = { inherit username homeDirectory secrets stateVersion inputs; }; 
+    extraSpecialArgs = { inherit username homeDirectory secrets stateVersion inputs machine-settings; }; 
     modules = [
-      # ({ pkgs, ... }: {
-      #   nixpkgs.overlays = [ inputs.fenix.overlays.default ];
-      # })
+      machine-settings.home-settings
       inputs.nixvim.homeManagerModules.nixvim
       inputs.flatpaks.homeManagerModules.default
       home-nix

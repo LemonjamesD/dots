@@ -4,6 +4,11 @@ in {
   home = {
     inherit username homeDirectory stateVersion;
   };
+  
+  home.sessionVariables = {
+    NIXPKGS_ALLOW_UNFREE = "1";
+    NIXPKGS_ALLOW_BROKEN = "1";
+  };
 
   imports = [
     ./helix.nix
@@ -13,11 +18,6 @@ in {
   ] ++ machine-settings.mkHomeModulePaths [
     ./gaming.nix
   ];
-
-  home.sessionVariables = {
-    NIXPKGS_ALLOW_UNFREE = "1";
-    NIXPKGS_ALLOW_BROKEN = "1";
-  };
 
   # Git
   programs.git = {

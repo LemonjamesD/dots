@@ -1,21 +1,24 @@
 ![Tiramisu](.github/tiramisu.jpg)
 
 # Directory
-- ![Homemanager](home)
-  * ![Users](home/users)
-    * ![Lemon](home/users/lemon)
-      * ![Helix Config](home/users/lemon/helix.nix)
-- ![Hyprland](https://github.com/LemonjamesD/dots/tree/hyprland)
-- ![Systems](systems)
-  * ![Prometheus](systems/prometheus)
-- ![NixOs](/)
-  * ![Users](users)
-    * ![Lemon](users/lemon)
-      * ![Wayland/Hyprland Config](users/lemon/wayland.nix)
-      * ![x11/KDE Config](users/lemon/x11.nix)
+- ![Modules](modules)
+  * ![Home Settings](modules/home)
+    * ![Lemon](modules/home/lemon.nix)
+  * ![System Settings](modules/system]
+    * ![Lemon](modules/system/lemon.nix)
+- ![Home](home)
+  * ![Lemon](home/lemon)
+    * ![Helix Config](home/lemon/helix.nix)
+- ![Machines](machines)
+  * ![Prometheus](machines/prometheus)
+- ![System](/)
+  * ![Users](system)
+    * ![Lemon](system/lemon)
+    * ![Pumpkin](system/pumpkin)
 - ![Eww](https://github.com/LemonjamesD/dots/tree/eww)
   * ![Images](https://github.com/LemonjamesD/dots/tree/eww/images)
   * ![Scripts](https://github.com/LemonjamesD/dots/tree/eww/scripts)
+- ![Hyprland](https://github.com/LemonjamesD/dots/tree/hyprland)
 
 # General Information for systems
 | Name | Info |

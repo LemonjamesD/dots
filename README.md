@@ -17,9 +17,10 @@
   * ![Images](https://github.com/LemonjamesD/dots/tree/eww/images)
   * ![Scripts](https://github.com/LemonjamesD/dots/tree/eww/scripts)
 
-# General Information for system `prometheus`
+# General Information for systems
 | Name | Info |
 | --- | --- |
+| System | Prometheus |
 | OS | NixOs |
 | DE | Hyprland (Wayland) | 
 | CPU | AMD Ryzen 5 3600XT |

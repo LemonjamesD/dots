@@ -9,6 +9,7 @@
 - ![Home](home)
   * ![Lemon](home/lemon)
     * ![Helix Config](home/lemon/helix.nix)
+  * ![Pumpkin](home/pumpkin)
 - ![Machines](machines)
   * ![Prometheus](machines/prometheus)
 - ![System](/)

@@ -1,5 +1,5 @@
 rec {
-  host = "prometheus";
+  host = import /etc/nixos/host.nix;
   user = import ./functions/machine-match.nix { inherit host; };
 
   system = "x86_64-linux";

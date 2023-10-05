@@ -1,1 +1,0 @@
-map (f: "/etc/nixos/modules/home/${builtins.baseNameOf f}")

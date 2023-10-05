@@ -1,7 +1,7 @@
 args@{ config, pkgs, ... }:
 
 {
-  imports = [] ++ machine-settings.mkModulePaths [
+  imports = [] ++ machine-settings.mkSystemModulePaths [
     ./system/nvidia.nix
     ./system/tuigreen.nix (args // { cmd = "startx"; }))
   ];

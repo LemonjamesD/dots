@@ -1,0 +1,1 @@
+map (f: "../../modules/home" + "/./" + builtins.baseNameOf f)

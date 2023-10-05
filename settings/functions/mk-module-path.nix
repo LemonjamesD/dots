@@ -1,1 +1,0 @@
-map (f: "/etc/nixos/modules/" + builtins.dirOf f + "/./" + builtins.baseNameOf f)

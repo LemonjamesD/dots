@@ -8,5 +8,6 @@ rec {
   system-settings = import "./system/${user}.nix";
   home-settings = import "./home/${user}.nix";
 
-  mkModulePaths = import ./functions/mk-module-path.nix;
+  mkSystemModulePaths = import ./functions/mk-system-module-path.nix;
+  mkHomeModulePaths = import ./functions/mk-home-module-path.nix;
 }

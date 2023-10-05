@@ -3,7 +3,7 @@
 in {
   imports = [
     ./settings.nix
-  ] ++ machine-settings.mkModulePaths [
+  ] ++ machine-settings.mkSystemModulePaths [
     ./system/fonts.nix
     ./system/razer.nix
     ./system/qmk.nix

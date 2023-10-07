@@ -17,6 +17,9 @@ in {
     ./espanso.nix
   ] ++ machine-settings.mkHomeModulePaths [
     ./gaming.nix
+    ./haskell.nix
+    ./vulkan-glfw.nix
+    ./rust.nix
   ];
 
   # Git

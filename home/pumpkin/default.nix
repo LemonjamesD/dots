@@ -33,7 +33,6 @@
     };
   };
 
-
   # Git
   programs.git = {
     enable = true;
@@ -47,6 +46,13 @@
       credential.helper = "store";
       safe.directory = "*";
       init.defaultBranch = "main";
+    };
+  };
+
+  programs.gpg = {
+    enable = true;
+    settings = {
+      default-key = "06408C83157BC3925756EBFA1428E0EE4572A07B";
     };
   };
 

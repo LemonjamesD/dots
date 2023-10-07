@@ -14,6 +14,10 @@
     ../lemon/helix.nix
     ./vulkan-glfw.nix
     ./rust.nix
+  ] ++ machine-settings.mkHomeModulePaths [
+    ./haskell.nix
+    ./rust.nix
+    ./vulkan-glfw.nix
   ];
   
   # zsh

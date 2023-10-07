@@ -1,0 +1,4 @@
+{
+  passwd = ''$6$xEdbKcrMBRyVGCJe$etcS1GHjeWffxrgwpd8/5PZoB6lhTWYE0jMLXsrf08AjzJ8TOY8eFMWk1B5tjXU2XUtgx8WV5lTl/c17Jjluc0'';
+  git-key = ''06408C83157BC3925756EBFA1428E0EE4572A07B'';
+}

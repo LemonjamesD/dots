@@ -1,4 +1,4 @@
-{ ... }:
+{ machine-settings, ... }:
 
 {
   imports = [

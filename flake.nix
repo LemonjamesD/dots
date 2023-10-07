@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-nvidia.url = "github:nixos/nixpkgs/nixos-23.05";
     # for rust-analyzer
     fenix = {
       url = "github:nix-community/fenix";
@@ -12,7 +11,7 @@
     fhs.url = "github:GermanBread/nixos-fhs/stable";
 
     # Lilex Font
-    lilex-font.url = "github:LemonjamesD/Lilex-Flake/pre-compiled";
+#    lilex-font.url = "github:LemonjamesD/Lilex-Flake/pre-compiled";
 
     # Impermanence
     impermanence.url = "github:nix-community/impermanence";
@@ -21,10 +20,10 @@
     home-manager.url = "github:nix-community/home-manager";
     # helix bs (the workaround is insane)
     # dream2nix.url = "github:nix-community/dream2nix";
-    nci = {
-      url = "github:yusdacra/nix-cargo-integration";
+ #   nci = {
+    #  url = "github:yusdacra/nix-cargo-integration";
       # inputs.dream2nix.follows = "dream2nix";
-    };
+  #  };
     helix-master = {
       url = "github:LemonjamesD/helix/new-daily-driver";
       # inputs.nci.follows = "nci";
@@ -39,7 +38,7 @@
   };
 
   outputs = {
-    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, lilex-font, impermanence, nixpkgs-nvidia, fenix, nixvim, ... 
+    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, impermanence, nixvim, fenix, ... 
   }@inputs: let
     secrets = import "/etc/nixos/secrets.nix";
     machine-settings = import ./settings/machine-settings.nix;

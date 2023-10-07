@@ -10,7 +10,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Host name
-  networking.hostName = "aphordite";
+  networking.hostName = "aphrodite";
   
   # Timezone
   time.timeZone = "America/New_York";

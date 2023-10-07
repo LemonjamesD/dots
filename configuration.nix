@@ -52,6 +52,8 @@ in {
     unzip
 
     xfce.thunar
+
+    kitty
   ];
 
   environment.sessionVariables = rec {

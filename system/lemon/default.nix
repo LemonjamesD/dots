@@ -3,6 +3,7 @@
 in {
   imports = [
   ] ++ machine-settings.mkSystemModulePaths [
+    ./nvidia-open.nix
     ./fonts.nix
     ./razer.nix
     ./qmk.nix

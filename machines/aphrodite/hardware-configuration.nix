@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
@@ -16,6 +16,7 @@
   fileSystems."/" =
     { device = "none";
       fsType = "tmpfs";
+      options = [ "size=20G" "mode=755" ];
     };
 
   fileSystems."/etc/nixos" =
@@ -24,16 +25,10 @@
       options = [ "subvol=nixos" ];
     };
 
-  fileSystems."/etc/nix" =
+  fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/8274bbd9-a34f-42eb-b1bf-d9a7e22dce07";
       fsType = "btrfs";
       options = [ "subvol=nix" ];
-    };
-
-  fileSystems."/etc/nix/store" =
-    { device = "/dev/disk/by-uuid/8274bbd9-a34f-42eb-b1bf-d9a7e22dce07";
-      fsType = "btrfs";
-      options = [ "subvol=store" ];
     };
 
   fileSystems."/home" =

@@ -2,7 +2,6 @@ args@{ config, pkgs, machine-settings, inputs, ...}: let
 
 in {
   imports = [
-    ./nvidia-open.nix
     ./hyprland-tuigreet.nix
   ];
 

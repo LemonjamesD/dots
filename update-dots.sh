@@ -10,13 +10,13 @@ git commit -m "[SCRIPT] Updated dot files! 🚀"
 git push
 
 # Update eww git
+cd ~/.config/eww
 git checkout eww
 git add .
 git commit -m "[SCRIPT] Updated dot files! 🚀"
 git push
 
 # Copy README to eww
-cd ~/.config/eww
 git pull
 cp /etc/nixos/README.md ./
 git add README.md
@@ -24,13 +24,13 @@ git commit -m "[SCRIPT] Updated \`eww\` README! 🚀"
 git push
 
 # Update hyprland git
+cd ~/.config/hypr
 git checkout hyprland
 git add .
 git commit -m "[SCRIPT] Updated dot files! 🚀"
 git push
 
 # Copy README to hyprland
-cd ~/.config/hypr
 git pull
 cp /etc/nixos/README.md ./
 git add README.md

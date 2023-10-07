@@ -47,7 +47,7 @@
     host = machine-settings.host;
     user = machine-settings.user;
     stateVersion = machine-settings.stateVersion;
-    
+
     mkNixOS = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit nixpkgs system stateVersion machine-settings host user secrets inputs; };

@@ -12,6 +12,8 @@
 
   imports = [
     ../lemon/helix.nix
+    ./vulkan-glfw.nix
+    ./rust.nix
   ];
   
   # zsh
@@ -64,5 +66,7 @@
     syncthing
     keepassxc
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
+
+    openssl
   ];
 }

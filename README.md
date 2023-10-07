@@ -28,11 +28,16 @@
 | Name | Info |
 | --- | --- |
 | System | Prometheus |
-| OS | NixOs |
 | DE | Hyprland (Wayland) | 
 | CPU | AMD Ryzen 5 3600XT |
 | GPU | NVIDIA GeForce GTX 1660 |
-| Shell | Zsh |
+
+| Name | Info |
+| --- | --- |
+| System | Aphrodite |
+| DE | Hyprland (Wayland) |
+| CPU | AMD Ryzen 5 (PRO) 5650U |
+| GPU | AMD ATI Radeon Vega Series |
 
 # Eww Bar
 ![EwwBar](.github/ewwbar.png)

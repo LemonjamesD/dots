@@ -63,5 +63,6 @@
   home.packages = with pkgs; [
     syncthing
     keepassxc
+    inputs.hypr-contrib.packages.${pkgs.system}.grimblast
   ];
 }

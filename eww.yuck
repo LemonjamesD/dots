@@ -5,7 +5,7 @@
 	(right)))
 
 (defwidget left [] 
-  (box :class "rcorners" ""))
+  (box :class "rcorners" "${EWW_BATTERY.BAT0.capacity}%"))
     
 (defwidget center [] 
   (box :class "rcorners center"
@@ -61,7 +61,7 @@
 
 (defwindow bar
   :exclusive true
-  :monitor 1
+  :monitor 0
   :windowtype "dock"
   :geometry (geometry :x "0%"
                       :y "1%"

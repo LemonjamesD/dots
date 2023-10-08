@@ -9,6 +9,6 @@
     cargo-expand
     glibc_multi
     rust-analyzer-nightly
-    rustup`
+    rustup
   ];
 }

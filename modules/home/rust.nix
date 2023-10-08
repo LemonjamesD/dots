@@ -3,6 +3,7 @@
     latest.cargo
     latest.rustc
     targets."x86_64-unknown-linux-gnu".latest.rust-std
+    latest.rustup
   ];
 in {
   nixpkgs.overlays = [
@@ -15,5 +16,6 @@ in {
     glibc_multi
     rust-analyzer-nightly
     toolchain
+    rusty-man
   ];
 }

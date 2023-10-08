@@ -5,7 +5,7 @@
 	(right)))
 
 (defwidget left [] 
-  (box :class "rcorners" "${EWW_BATTERY.BAT0.capacity}%"))
+  (box :class "rcorners" "${EWW_BATTERY.BAT0.status} / ${EWW_BATTERY.BAT0.capacity}%"))
     
 (defwidget center [] 
   (box :class "rcorners center"

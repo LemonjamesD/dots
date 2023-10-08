@@ -10,6 +10,7 @@ in {
   ];
   
   home.packages = with pkgs; [
+    gcc
     cargo-expand
     glibc_multi
     rust-analyzer-nightly

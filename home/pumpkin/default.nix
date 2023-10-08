@@ -70,5 +70,6 @@
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
 
     openssl
+    brightnessctl
   ];
 }

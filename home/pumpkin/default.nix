@@ -71,5 +71,8 @@
 
     openssl
     brightnessctl
+
+    # Better audio suppression
+    noisetorch
   ];
 }

@@ -3,7 +3,7 @@
     latest.cargo
     latest.rustc
     targets."x86_64-unknown-linux-gnu".latest.rust-std
-    latest.rustup
+    latest.rust-docs
   ];
 in {
   nixpkgs.overlays = [

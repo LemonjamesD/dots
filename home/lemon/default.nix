@@ -176,6 +176,7 @@ in {
     qbittorrent
     vlc
     docker
+    tmux
 
     # Controller
     qjoypad

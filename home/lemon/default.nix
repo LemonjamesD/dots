@@ -112,11 +112,6 @@ in {
     hwinfo
     pciutils
 
-    # Rust
-    rustup
-    # rust-analyzer-nightly
-    pkg-config
-
     # Screenshots
     grim
     slurp
@@ -146,13 +141,6 @@ in {
 
     # editor
     hexyl
-
-    # Haskell
-    haskell.compiler.ghc942
-    stack
-    cabal-install
-    haskellPackages.hindent
-    ihp-new
 
     # Borwsers
     firefox

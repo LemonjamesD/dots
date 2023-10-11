@@ -12,6 +12,7 @@ in {
   
   home.packages = with pkgs; [
     gcc
+    openssl
     cargo-expand
     glibc_multi
     rust-analyzer-nightly

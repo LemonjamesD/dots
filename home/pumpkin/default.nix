@@ -74,5 +74,8 @@
 
     # Better audio suppression
     noisetorch
+
+    htop
+    hyperfine
   ];
 }

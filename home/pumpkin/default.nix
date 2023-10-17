@@ -16,6 +16,7 @@
     ./haskell.nix
     ./rust.nix
     ./vulkan-glfw.nix
+    ./gaming.nix
   ];
   
   # zsh

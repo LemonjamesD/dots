@@ -7,5 +7,6 @@
     ./polkit.nix
     ./pipewire.nix
     ./hyprland.nix
+    ./amd.nix
   ];
 }

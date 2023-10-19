@@ -78,5 +78,7 @@
 
     htop
     hyperfine
+
+    glxinfo
   ];
 }

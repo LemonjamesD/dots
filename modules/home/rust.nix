@@ -18,5 +18,6 @@ in {
     rust-analyzer-nightly
     toolchain
     rusty-man
+    rustfmt
   ];
 }

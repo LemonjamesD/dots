@@ -62,10 +62,6 @@ in {
   ];
 
   home.packages = with pkgs; [
-    # Haguichi
-    logmein-hamachi
-    haguichi
-    
     # Matrix Client
     element-desktop
 
@@ -86,7 +82,7 @@ in {
     oh-my-zsh
     neofetch
     bat
-    exa
+    eza
     openssl
 
     # vnc

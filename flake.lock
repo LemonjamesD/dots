@@ -230,15 +230,15 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1695513385,
-        "narHash": "sha256-paMWWNgtycmzZe4ibkdr/IM661vMXhb9SgXnybSkeg0=",
-        "owner": "SoraTenshi",
+        "lastModified": 1697865331,
+        "narHash": "sha256-yjwtRkcMi/qCUU/ZbC3BFbvi86agPwLVHyiU1fTtcUI=",
+        "owner": "LemonjamesD",
         "repo": "helix",
-        "rev": "f02dbced6791929d05028a50e998ec3f1565e349",
+        "rev": "64d1967c990ee3dc3263d4373f4ce80377c6e48b",
         "type": "github"
       },
       "original": {
-        "owner": "SoraTenshi",
+        "owner": "LemonjamesD",
         "ref": "new-daily-driver",
         "repo": "helix",
         "type": "github"

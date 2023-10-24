@@ -19,5 +19,6 @@ in {
     toolchain
     rusty-man
     rustfmt
+    bacon
   ];
 }

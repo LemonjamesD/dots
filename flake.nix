@@ -27,7 +27,7 @@
     helix-master = {
       url = "github:LemonjamesD/helix/new-daily-driver";
       # inputs.nci.follows = "nci";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     hypr-contrib.url = "github:hyprwm/contrib";
     flatpaks.url = "github:GermanBread/declarative-flatpak?rev=fb31283f55f06b489f2baf920201e8eb73c9a0d3";

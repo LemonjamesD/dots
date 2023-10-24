@@ -5,7 +5,7 @@
     package = inputs.helix-master.packages."x86_64-linux".default;
     settings = {
       theme = "catppuccin_frappe";
-      icons = "nerdfonts";
+      # icons = "nerdfonts";
       editor = {
         line-number = "relative";
         color-modes = true;
@@ -34,7 +34,7 @@
 
         gutters = [ "diagnostics" "line-numbers" "spacer" "diff"];
         statusline = {
-          mode-separator = "";
+          # mode-separator = "";
           separator = "";
           left = [ "mode" "selections" "spinner" "file-name" "total-line-numbers"];
           center = [ ];

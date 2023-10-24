@@ -141,6 +141,7 @@ in {
     # Borwsers
     firefox
     ungoogled-chromium
+    google-chrome
 
     # Unreal engine {broken}
     # ue4

@@ -80,5 +80,8 @@
     hyperfine
 
     glxinfo
+
+    obsidian
+    syncthing
   ];
 }

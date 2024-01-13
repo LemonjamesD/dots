@@ -57,6 +57,7 @@
       language = [
         {
           name = "rust";
+          file-types = ["oak" "rs"]; # this is for oak lang which doesn't have it's own highlighting but looks like rust
         }
         {
           name = "c";

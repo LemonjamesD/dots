@@ -5,6 +5,6 @@ in {
     ./nvidia.nix
   ];
 
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
   boot.kernelPackages = pkgs-nvidia.linuxPackages_latest;
 }

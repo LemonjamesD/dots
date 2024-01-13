@@ -20,6 +20,7 @@ in {
     ./haskell.nix
     ./vulkan-glfw.nix
     ./rust.nix
+    ./zig.nix
   ];
 
   # Git
@@ -59,6 +60,7 @@ in {
 
   home.sessionPath = [
     "$HOME/.cargo/bin"
+    "/usr/bin"
   ];
 
   home.packages = with pkgs; [
@@ -173,6 +175,10 @@ in {
     qbittorrent
     vlc
     docker
+    mnemosyne
+    qt-video-wlr
+    qt6.qtwayland
+    immersed-vr
     tmux
 
     # Controller
@@ -186,6 +192,10 @@ in {
     blueman
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
   services.flatpak = {
     remotes = {
       "flathub" = "https://flathub.org/repo/flathub.flatpakrepo";
@@ -195,6 +205,7 @@ in {
       "flathub:com.discordapp.Discord//stable"
       "flathub:de.shorsh.discord-screenaudio//stable"
       "flathub:xyz.armcord.ArmCord//stable"
+      "flathub:com.valvesoftware.SteamLink//stable"
     ];
   };
 }

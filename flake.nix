@@ -8,7 +8,7 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
     xdg-desktop-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
-    fhs.url = "github:GermanBread/nixos-fhs/stable";
+    # fhs.url = "github:GermanBread/nixos-fhs";
 
     # Lilex Font
 #    lilex-font.url = "github:LemonjamesD/Lilex-Flake/pre-compiled";
@@ -38,7 +38,7 @@
   };
 
   outputs = {
-    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, fhs, impermanence, nixvim, fenix, ... 
+    self, nixpkgs, hyprland, xdg-desktop-portal-hyprland, home-manager, helix-master, hypr-contrib, flatpaks, impermanence, nixvim, fenix, ... 
   }@inputs: let
     secrets = import "/etc/nixos/secrets.nix";
     machine-settings = import ./settings/machine-settings.nix;
@@ -53,7 +53,7 @@
       specialArgs = { inherit nixpkgs system stateVersion machine-settings host user secrets inputs; };
       modules = [
         machine-settings.system-settings
-        inputs.fhs.nixosModules.default
+        # inputs.fhs.nixosModules.default
         "${inputs.impermanence}/nixos.nix"
         # System
         (./configuration.nix)

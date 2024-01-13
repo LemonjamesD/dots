@@ -3,13 +3,16 @@
 in {
   imports = [
   ] ++ machine-settings.mkSystemModulePaths [
-    ./nvidia-open.nix
+    ./nvidia-pinned.nix
     ./fonts.nix
     ./razer.nix
     ./qmk.nix
     ./pipewire.nix
+    # ./plasma.nix
     ./hyprland.nix
     ./polkit.nix
+    ./android.nix
+    ./virtual.nix
   ];
 
   programs.kdeconnect.enable = true;

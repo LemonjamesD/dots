@@ -1,10 +1,8 @@
 { system, config, inputs, ... }: let
-  pkgs-nvidia = import inputs.nixpkgs-nvidia { inherit system; };
 in {
   imports = [
     ./nvidia.nix
   ];
 
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
-  boot.kernelPackages = pkgs-nvidia.linuxPackages_latest;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
 }

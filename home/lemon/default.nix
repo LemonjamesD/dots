@@ -93,6 +93,9 @@ in {
     # archives
     unzip
 
+    # something
+    grapejuice
+
     # C
     cmake
     gnumake

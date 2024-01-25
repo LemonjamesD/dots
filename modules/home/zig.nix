@@ -1,8 +1,9 @@
-{ pkgs, ... }: 
+{ pkgs, inputs, ... }: 
 
 {
   home.packages = with pkgs; [
-    zig
+    # zig
+    inputs.zig
     zls
   ];
 }

@@ -243,11 +243,19 @@
       },
       "locked": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1704498488,
         "narHash": "sha256-yINKdShHrtjdiJhov+q0s3Y3B830ujRoSbHduUNyKag=",
         "owner": "nix-community",
         "repo": "home-manager",
         "rev": "51e44a13acea71b36245e8bd8c7db53e0a3e61ee",
+=======
+        "lastModified": 1697688028,
+        "narHash": "sha256-d9CAOd9W2iTrgB31a8Dvyp6Vgn/gxASCNrD4Z9yzUOY=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "c5c1ea85181d2bb44e46e8a944a8a3f56ad88f19",
+>>>>>>> parent of 30cac05 ([SCRIPT] Updated dot files! 🚀)
 =======
         "lastModified": 1697688028,
         "narHash": "sha256-d9CAOd9W2iTrgB31a8Dvyp6Vgn/gxASCNrD4Z9yzUOY=",
@@ -291,11 +299,19 @@
       },
       "locked": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1704475363,
         "narHash": "sha256-isiBkAsjXIvb/6McVK42/iBbC4h+UL3JRkkLqTSPE48=",
         "owner": "hyprwm",
         "repo": "Hyprland",
         "rev": "7e033e48ace5406a9bc442f7d403f9ce3af193f3",
+=======
+        "lastModified": 1697830367,
+        "narHash": "sha256-BEi+DbGodETt9zAqG19T2pNCo2lPVVtipfQJ4AquwSM=",
+        "owner": "hyprwm",
+        "repo": "Hyprland",
+        "rev": "4a79718fe8e4601983797d254cce39960827cb02",
+>>>>>>> parent of 30cac05 ([SCRIPT] Updated dot files! 🚀)
 =======
         "lastModified": 1697830367,
         "narHash": "sha256-BEi+DbGodETt9zAqG19T2pNCo2lPVVtipfQJ4AquwSM=",
@@ -511,11 +527,19 @@
     "nixpkgs_7": {
       "locked": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1702645756,
         "narHash": "sha256-qKI6OR3TYJYQB3Q8mAZ+DG4o/BR9ptcv9UnRV2hzljc=",
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "40c3c94c241286dd2243ea34d3aef8a488f9e4d0",
+=======
+        "lastModified": 1697456312,
+        "narHash": "sha256-roiSnrqb5r+ehnKCauPLugoU8S36KgmWraHgRqVYndo=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ca012a02bf8327be9e488546faecae5e05d7d749",
+>>>>>>> parent of 30cac05 ([SCRIPT] Updated dot files! 🚀)
 =======
         "lastModified": 1697456312,
         "narHash": "sha256-roiSnrqb5r+ehnKCauPLugoU8S36KgmWraHgRqVYndo=",

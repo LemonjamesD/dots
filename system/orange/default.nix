@@ -23,6 +23,8 @@ in {
 
     # Syncing
     syncthing
+
+    linuxKernel.packages.linux_zen.xone
   ];
 
   # bluetooth
@@ -44,4 +46,6 @@ in {
     CC = "clang";
     NIXPKGS_ALLOW_UNFREE = "1";
   };
+  hardware.xpadneo.enable = true;
+  hardware.xone.enable = true; 
 }

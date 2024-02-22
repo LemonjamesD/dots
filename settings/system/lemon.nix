@@ -1,6 +1,9 @@
 { pkgs, secrets, ... }:
 
 {
+  # Should fix bluetnooth controll thing
+  boot.extraModprobeConfig = '' options bluetooth disable_ertm=1 '';
+
   # Allow Unfree
   nixpkgs.config = {
     allowUnfree = true;

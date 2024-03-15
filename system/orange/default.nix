@@ -3,8 +3,8 @@
 in {
   imports = [
   ] ++ machine-settings.mkSystemModulePaths [
-    ./nvidia-open.nix
-    ./nvidia-pinned.nix
+    # ./nvidia-open.nix
+    # ./nvidia-pinned.nix
     ./fonts.nix
     ./razer.nix
     ./qmk.nix

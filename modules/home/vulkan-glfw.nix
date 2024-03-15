@@ -6,10 +6,7 @@
     vulkan-headers
     vulkan-validation-layers
     vulkan-loader
-
-    pkg-config
-    cmake
-
+    
     xorg.libX11 xorg.libXcursor xorg.libXi xorg.libXrandr
     libxkbcommon wayland
 

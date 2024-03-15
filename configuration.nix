@@ -91,6 +91,6 @@ in {
 
   system.autoUpgrade.enable = true;
   system.stateVersion = machine-settings.stateVersion;
-  nix.settings.trusted-users = [ "root" "lemon" ];
+  nix.settings.trusted-users = [ "root" "lemon" "orange" ];
 }
 

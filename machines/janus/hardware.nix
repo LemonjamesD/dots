@@ -47,6 +47,11 @@
     { device = "/dev/disk/by-uuid/7BE462B403C20D04";
       fsType = "ntfs";
     };
+    
+  fileSystems."/run/media/HiSpedGames" =
+    { device = "/dev/disk/by-uuid/01DA6374569C2200";
+      fsType = "ntfs";
+    };
 
   # Make some extra kernel modules available to NixOS
   boot.extraModulePackages = with config.boot.kernelPackages;

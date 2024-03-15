@@ -16,6 +16,7 @@
     protontricks
     protonup-ng
     steam
+    protonup-qt
 
     # Wine
     wineWowPackages.stable

@@ -35,6 +35,11 @@
 
   # CUPS
   services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
 
   # zsh default shell
   programs.zsh.enable = true;

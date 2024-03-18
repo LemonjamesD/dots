@@ -14,6 +14,7 @@ in {
     ./polkit.nix
     # ./android.nix
     ./virtual.nix
+    ./enableopengl.nix
   ];
 
   programs.kdeconnect.enable = true;

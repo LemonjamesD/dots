@@ -11,11 +11,11 @@ git push
 
 # Update eww git
 cd ~/.config/eww
-git checkout eww
-git pull
-git add .
-git commit -m "[SCRIPT] Updated dot files! 🚀"
-git push
+# git checkout eww
+# git pull
+# git add .
+# git commit -m "[SCRIPT] Updated dot files! 🚀"
+# git push
 
 # # Copy README to eww
 # cp /etc/nixos/README.md ./

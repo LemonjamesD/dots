@@ -8,7 +8,6 @@ git pull
 git add .
 git commit -m "[SCRIPT] Updated dot files! 🚀"
 git push
-git checkout refactorv2
 
 # Update eww git
 cd ~/.config/eww
@@ -25,8 +24,8 @@ git commit -m "[SCRIPT] Updated \`eww\` README! 🚀"
 git push
 
 # Update hyprland git
-git pull
 cd ~/.config/hypr
+git pull
 git checkout hyprland
 git add .
 git commit -m "[SCRIPT] Updated dot files! 🚀"

@@ -8,6 +8,7 @@ git pull
 git add .
 git commit -m "[SCRIPT] Updated dot files! 🚀"
 git push
+git checkout refactorv2
 
 # Update eww git
 cd ~/.config/eww
